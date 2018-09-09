@@ -30,4 +30,11 @@ app.post('/cars', function (req, res) {
     res.send(cars);
   });
 
+  app.delete('/cars', function (req, res) {
+    console.log("Car deleted from cars array: ", req.body.car);
+    cars.splice( cars.indexOf(req.body.car), 1 );
+    console.log(cars);
+    res.send(cars);
+  });
+
 app.listen(9000);
