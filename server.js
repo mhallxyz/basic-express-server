@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 var emoji = require('./emoji.json');
+var images = require('./images.json');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -21,6 +22,10 @@ app.get("/cars", function(req, res) {
 
 app.get("/emoji", function(req, res) {
     res.send(emoji);
+})
+
+app.get("/images", function(req, res) {
+    res.send(images);
 })
 
 app.post('/cars', function (req, res) {
