@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+var port = process.env.PORT || 9000;
 
 var emoji = require('./emoji.json');
 var images = require('./images.json');
@@ -42,4 +43,4 @@ app.post('/cars', function (req, res) {
     res.send(cars);
   });
 
-app.listen(8000);
+app.listen(port);
