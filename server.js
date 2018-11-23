@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var port = process.env.PORT || 9000;
+const os = require('os');
 
 var emoji = require('./emoji.json');
 var images = require('./images.json');
@@ -17,12 +18,18 @@ var cars = [
     "Bentley"
 ];
 
+console.log(os.cpus())
+
 app.get("/cars", function(req, res) {
     res.send(cars);
 })
 
 app.get("/emoji", function(req, res) {
     res.send(emoji);
+})
+
+app.get("/cpu", function(req, res) {
+    res.send(os.cpus());
 })
 
 app.get("/", function(req, res) {
