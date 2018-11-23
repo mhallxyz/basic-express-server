@@ -25,6 +25,10 @@ app.get("/emoji", function(req, res) {
     res.send(emoji);
 })
 
+app.get("/", function(req, res) {
+    res.send(images);
+})
+
 app.get("/images", function(req, res) {
     res.send(images);
 })
