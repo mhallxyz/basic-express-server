@@ -18,9 +18,15 @@ var cars = [
     "Bentley"
 ];
 
-const system = os.cpus().concat(os.freemem()).concat(os.loadavg().concat(os.platform()))
 
-console.log(os.cpus().concat(os.freemem()).concat(os.loadavg()).concat(os.platform()))
+const system = {
+    cpu: os.cpus(),
+    freeMem: os.freemem(),
+    avgLoad: os.loadavg(),
+    platform: os.platform()
+}
+
+console.log(system)
 
 app.get("/cars", function(req, res) {
     res.send(cars);
