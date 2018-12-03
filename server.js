@@ -18,7 +18,9 @@ var cars = [
     "Bentley"
 ];
 
-console.log(os.cpus())
+const system = os.cpus().concat(os.freemem()).concat(os.loadavg().concat(os.platform()))
+
+console.log(os.cpus().concat(os.freemem()).concat(os.loadavg()).concat(os.platform()))
 
 app.get("/cars", function(req, res) {
     res.send(cars);
@@ -29,11 +31,11 @@ app.get("/emoji", function(req, res) {
 })
 
 app.get("/cpu", function(req, res) {
-    res.send(os.cpus());
+    res.send(system);
 })
 
 app.get("/", function(req, res) {
-    res.send(images);
+    res.send(system);
 })
 
 app.get("/images", function(req, res) {
