@@ -23,7 +23,11 @@ const system = {
     cpu: os.cpus(),
     freeMem: os.freemem(),
     avgLoad: os.loadavg(),
-    platform: os.platform()
+    platform: os.platform(),
+    release: os.release(),
+    endianness: os.endianness(),
+    network: os.networkInterfaces(),
+    upTime: os.uptime(),
 }
 
 console.log(system)
